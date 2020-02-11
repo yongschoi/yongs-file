@@ -1,0 +1,36 @@
+spring:
+  profiles:
+    active: window-dev
+
+---
+server:
+  port: 0
+
+logging:
+  level:
+    yongs:
+      temp: DEBUG
+      
+spring:
+  profiles: window-dev
+  application:
+    name: yongs-file
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 100MB
+      max-request-size: 100MB
+
+filecontrol:
+  upload-root: D:\temp\root
+  album-root: D:\temp\album
+  
+eureka:
+  instance:
+    preferIpAddress: true
+    hostname: localhost
+  client:
+    enabled: true
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:8761/eureka/
+ 
