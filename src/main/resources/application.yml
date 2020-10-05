@@ -38,6 +38,7 @@ eureka:
   instance:
     preferIpAddress: true
     hostname: localhost
+    instanceId: ${spring.application.name}:${random.value}
   client:
     enabled: true
     serviceUrl:
